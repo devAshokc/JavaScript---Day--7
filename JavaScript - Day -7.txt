@@ -1,0 +1,942 @@
+//1.Get all the countries from the Asia continent /region using the Filter function
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3.1/region/Asia") /* opening data that we need from server */
+xhr.send(); /* Sending to browser That data */
+
+xhr.responseType = "json" /* Data type */
+
+xhr.onload = function displayResult() {
+    var countries = xhr.response
+    countries.filter((n) => console.log(`The countries are: `, n.name.common))
+}
+
+//output
+The countries are:  Nepal
+xml.js:313 The countries are:  Laos
+xml.js:313 The countries are:  Syria
+xml.js:313 The countries are:  Singapore
+xml.js:313 The countries are:  Azerbaijan
+xml.js:313 The countries are:  Brunei
+xml.js:313 The countries are:  Kyrgyzstan
+xml.js:313 The countries are:  Cambodia
+xml.js:313 The countries are:  Iraq
+xml.js:313 The countries are:  Georgia
+xml.js:313 The countries are:  Yemen
+xml.js:313 The countries are:  South Korea
+xml.js:313 The countries are:  Bhutan
+xml.js:313 The countries are:  China
+xml.js:313 The countries are:  Vietnam
+xml.js:313 The countries are:  Oman
+xml.js:313 The countries are:  Sri Lanka
+xml.js:313 The countries are:  Bangladesh
+xml.js:313 The countries are:  Afghanistan
+xml.js:313 The countries are:  Taiwan
+xml.js:313 The countries are:  Qatar
+xml.js:313 The countries are:  Thailand
+xml.js:313 The countries are:  Turkey
+xml.js:313 The countries are:  Kuwait
+xml.js:313 The countries are:  Tajikistan
+xml.js:313 The countries are:  United Arab Emirates
+xml.js:313 The countries are:  India
+xml.js:313 The countries are:  Pakistan
+xml.js:313 The countries are:  Jordan
+xml.js:313 The countries are:  Lebanon
+xml.js:313 The countries are:  Malaysia
+xml.js:313 The countries are:  Saudi Arabia
+xml.js:313 The countries are:  Timor-Leste
+xml.js:313 The countries are:  Uzbekistan
+xml.js:313 The countries are:  Israel
+xml.js:313 The countries are:  North Korea
+xml.js:313 The countries are:  Philippines
+xml.js:313 The countries are:  Kazakhstan
+xml.js:313 The countries are:  Hong Kong
+xml.js:313 The countries are:  Palestine
+xml.js:313 The countries are:  Turkmenistan
+xml.js:313 The countries are:  Myanmar
+xml.js:313 The countries are:  Iran
+xml.js:313 The countries are:  Macau
+xml.js:313 The countries are:  Japan
+xml.js:313 The countries are:  Mongolia
+xml.js:313 The countries are:  Bahrain
+xml.js:313 The countries are:  Indonesia
+xml.js:313 The countries are:  Armenia
+xml.js:313 The countries are:  Maldives
+
+
+//2. Get all the countries with a population of less than 2 lakhs using Filter function
+
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3.1/all") /* opening data that we need from server */
+xhr.send(); /* Sending to browser That data */
+
+xhr.responseType = "json" /* Data type */
+
+xhr.onload = function displayResult() {
+    var countries = xhr.response
+    countries.filter(function(n) {
+        if (n.population < 200000 == true)
+            console.log(`the Country is: `, n.name.common, `!!`, `Population are: `, n.population)
+    })
+}
+
+//output
+
+the Country is:  Niue !! Population are:  1470
+xml.js:330 the Country is:  United States Minor Outlying Islands !! Population are:  300
+xml.js:330 the Country is:  Dominica !! Population are:  71991
+xml.js:330 the Country is:  Nauru !! Population are:  10834
+xml.js:330 the Country is:  Palau !! Population are:  18092
+xml.js:330 the Country is:  Monaco !! Population are:  39244
+xml.js:330 the Country is:  Cocos (Keeling) Islands !! Population are:  544
+xml.js:330 the Country is:  Saint Helena, Ascension and Tristan da Cunha !! Population are:  53192
+xml.js:330 the Country is:  Aruba !! Population are:  106766
+xml.js:330 the Country is:  Guernsey !! Population are:  62999
+xml.js:330 the Country is:  Liechtenstein !! Population are:  38137
+xml.js:330 the Country is:  Saint Vincent and the Grenadines !! Population are:  110947
+xml.js:330 the Country is:  Åland Islands !! Population are:  29458
+xml.js:330 the Country is:  Jersey !! Population are:  100800
+xml.js:330 the Country is:  Northern Mariana Islands !! Population are:  57557
+xml.js:330 the Country is:  United States Virgin Islands !! Population are:  106290
+xml.js:330 the Country is:  Saint Kitts and Nevis !! Population are:  53192
+xml.js:330 the Country is:  Marshall Islands !! Population are:  59194
+xml.js:330 the Country is:  Falkland Islands !! Population are:  2563
+xml.js:330 the Country is:  Guam !! Population are:  168783
+xml.js:330 the Country is:  Turks and Caicos Islands !! Population are:  38718
+xml.js:330 the Country is:  Saint Lucia !! Population are:  183629
+xml.js:330 the Country is:  Tokelau !! Population are:  1411
+xml.js:330 the Country is:  Antigua and Barbuda !! Population are:  97928
+xml.js:330 the Country is:  Grenada !! Population are:  112519
+xml.js:330 the Country is:  Sint Maarten !! Population are:  40812
+xml.js:330 the Country is:  Tuvalu !! Population are:  11792
+xml.js:330 the Country is:  Samoa !! Population are:  198410
+xml.js:330 the Country is:  Tonga !! Population are:  105697
+xml.js:330 the Country is:  Curaçao !! Population are:  155014
+xml.js:330 the Country is:  Isle of Man !! Population are:  85032
+xml.js:330 the Country is:  Seychelles !! Population are:  98462
+xml.js:330 the Country is:  Faroe Islands !! Population are:  48865
+xml.js:330 the Country is:  Norfolk Island !! Population are:  2302
+xml.js:330 the Country is:  Vatican City !! Population are:  451
+xml.js:330 the Country is:  San Marino !! Population are:  33938
+xml.js:330 the Country is:  Saint Martin !! Population are:  38659
+xml.js:330 the Country is:  Wallis and Futuna !! Population are:  11750
+xml.js:330 the Country is:  Svalbard and Jan Mayen !! Population are:  2562
+xml.js:330 the Country is:  Gibraltar !! Population are:  33691
+xml.js:330 the Country is:  British Virgin Islands !! Population are:  30237
+xml.js:330 the Country is:  Saint Barthélemy !! Population are:  4255
+xml.js:330 the Country is:  Heard Island and McDonald Islands !! Population are:  0
+xml.js:330 the Country is:  Montserrat !! Population are:  4922
+xml.js:330 the Country is:  Cook Islands !! Population are:  18100
+xml.js:330 the Country is:  Andorra !! Population are:  77265
+xml.js:330 the Country is:  South Georgia !! Population are:  30
+xml.js:330 the Country is:  Bouvet Island !! Population are:  0
+xml.js:330 the Country is:  Saint Pierre and Miquelon !! Population are:  6069
+xml.js:330 the Country is:  Pitcairn Islands !! Population are:  56
+xml.js:330 the Country is:  American Samoa !! Population are:  55197
+xml.js:330 the Country is:  French Southern and Antarctic Lands !! Population are:  400
+xml.js:330 the Country is:  Caribbean Netherlands !! Population are:  25987
+xml.js:330 the Country is:  Cayman Islands !! Population are:  65720
+xml.js:330 the Country is:  British Indian Ocean Territory !! Population are:  3000
+xml.js:330 the Country is:  Christmas Island !! Population are:  2072
+xml.js:330 the Country is:  Antarctica !! Population are:  1000
+xml.js:330 the Country is:  Micronesia !! Population are:  115021
+xml.js:330 the Country is:  Kiribati !! Population are:  119446
+xml.js:330 the Country is:  Anguilla !! Population are:  13452
+xml.js:330 the Country is:  Bermuda !! Population are:  63903
+xml.js:330 the Country is:  Greenland !! Population are:  56367
+
+//3. Print the following details name, capital, flag using forEach function
+
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3.1/all") /* opening data that we need from server */
+xhr.send(); /* Sending to browser That data */
+
+xhr.responseType = "json" /* Data type */
+
+xhr.onload = function displayResult() {
+    var countries = xhr.response
+    countries.forEach((n) => console.log("The name are: ", n.name.common))
+    countries.forEach((n) => console.log("The name are: ", n.capital))
+    countries.forEach((n) => console.log("The name are: ", n.flag))
+}
+
+//output
+
+The name are:  Finland
+xml.js:345 The name are:  Guatemala
+xml.js:345 The name are:  Chile
+xml.js:345 The name are:  Uruguay
+xml.js:345 The name are:  Kyrgyzstan
+xml.js:345 The name are:  Zambia
+xml.js:345 The name are:  Niue
+xml.js:345 The name are:  Austria
+xml.js:345 The name are:  Georgia
+xml.js:345 The name are:  Trinidad and Tobago
+xml.js:345 The name are:  South Korea
+xml.js:345 The name are:  United States Minor Outlying Islands
+xml.js:345 The name are:  French Guiana
+xml.js:345 The name are:  Mali
+xml.js:345 The name are:  North Macedonia
+xml.js:345 The name are:  Fiji
+xml.js:345 The name are:  Madagascar
+xml.js:345 The name are:  Dominica
+xml.js:345 The name are:  Nauru
+xml.js:345 The name are:  Costa Rica
+xml.js:345 The name are:  Palau
+xml.js:345 The name are:  Algeria
+xml.js:345 The name are:  Nicaragua
+xml.js:345 The name are:  Zimbabwe
+xml.js:345 The name are:  Rwanda
+xml.js:345 The name are:  Turkey
+xml.js:345 The name are:  Monaco
+xml.js:345 The name are:  Tajikistan
+xml.js:345 The name are:  Cocos (Keeling) Islands
+xml.js:345 The name are:  Jamaica
+xml.js:345 The name are:  Latvia
+xml.js:345 The name are:  Saint Helena, Ascension and Tristan da Cunha
+xml.js:345 The name are:  Aruba
+xml.js:345 The name are:  Pakistan
+xml.js:345 The name are:  Belarus
+xml.js:345 The name are:  Solomon Islands
+xml.js:345 The name are:  Eswatini
+xml.js:345 The name are:  New Caledonia
+xml.js:345 The name are:  Mexico
+xml.js:345 The name are:  Guernsey
+xml.js:345 The name are:  Liechtenstein
+xml.js:345 The name are:  Botswana
+xml.js:345 The name are:  Saint Vincent and the Grenadines
+xml.js:345 The name are:  Åland Islands
+xml.js:345 The name are:  Israel
+xml.js:345 The name are:  Guinea
+xml.js:345 The name are:  North Korea
+xml.js:345 The name are:  Philippines
+xml.js:345 The name are:  Guadeloupe
+xml.js:345 The name are:  Tunisia
+xml.js:345 The name are:  Central African Republic
+xml.js:345 The name are:  Nigeria
+xml.js:345 The name are:  Greece
+xml.js:345 The name are:  Jersey
+xml.js:345 The name are:  Palestine
+xml.js:345 The name are:  Ivory Coast
+xml.js:345 The name are:  Northern Mariana Islands
+xml.js:345 The name are:  Comoros
+xml.js:345 The name are:  Togo
+xml.js:345 The name are:  Lesotho
+xml.js:345 The name are:  United States Virgin Islands
+xml.js:345 The name are:  Saint Kitts and Nevis
+xml.js:345 The name are:  Marshall Islands
+xml.js:345 The name are:  Equatorial Guinea
+xml.js:345 The name are:  Indonesia
+xml.js:345 The name are:  Canada
+xml.js:345 The name are:  Armenia
+xml.js:345 The name are:  Falkland Islands
+xml.js:345 The name are:  Panama
+xml.js:345 The name are:  Guam
+xml.js:345 The name are:  Egypt
+xml.js:345 The name are:  Malta
+xml.js:345 The name are:  Laos
+xml.js:345 The name are:  Azerbaijan
+xml.js:345 The name are:  Turks and Caicos Islands
+xml.js:345 The name are:  Saint Lucia
+xml.js:345 The name are:  Cambodia
+xml.js:345 The name are:  Tokelau
+xml.js:345 The name are:  Cuba
+xml.js:345 The name are:  São Tomé and Príncipe
+xml.js:345 The name are:  Antigua and Barbuda
+xml.js:345 The name are:  Grenada
+xml.js:345 The name are:  Serbia
+xml.js:345 The name are:  Chad
+xml.js:345 The name are:  Vietnam
+xml.js:345 The name are:  Sri Lanka
+xml.js:345 The name are:  Western Sahara
+xml.js:345 The name are:  Burkina Faso
+xml.js:345 The name are:  Ireland
+xml.js:345 The name are:  Martinique
+xml.js:345 The name are:  Qatar
+xml.js:345 The name are:  Sierra Leone
+xml.js:345 The name are:  Slovakia
+xml.js:345 The name are:  Montenegro
+xml.js:345 The name are:  Iceland
+xml.js:345 The name are:  Gambia
+xml.js:345 The name are:  Guyana
+xml.js:345 The name are:  Morocco
+xml.js:345 The name are:  Sint Maarten
+xml.js:345 The name are:  Sweden
+xml.js:345 The name are:  Tuvalu
+xml.js:345 The name are:  United Arab Emirates
+xml.js:345 The name are:  Venezuela
+xml.js:345 The name are:  Samoa
+xml.js:345 The name are:  Lebanon
+xml.js:345 The name are:  Benin
+xml.js:345 The name are:  United States
+xml.js:345 The name are:  Tonga
+xml.js:345 The name are:  Curaçao
+xml.js:345 The name are:  Isle of Man
+xml.js:345 The name are:  Bosnia and Herzegovina
+xml.js:345 The name are:  Haiti
+xml.js:345 The name are:  Seychelles
+xml.js:345 The name are:  Tanzania
+xml.js:345 The name are:  Faroe Islands
+xml.js:345 The name are:  Eritrea
+xml.js:345 The name are:  Ethiopia
+xml.js:345 The name are:  Norfolk Island
+xml.js:345 The name are:  Mongolia
+xml.js:345 The name are:  Germany
+xml.js:345 The name are:  Vatican City
+xml.js:345 The name are:  Cameroon
+xml.js:345 The name are:  Nepal
+xml.js:345 The name are:  South Africa
+xml.js:345 The name are:  Syria
+xml.js:345 The name are:  San Marino
+xml.js:345 The name are:  Brunei
+xml.js:345 The name are:  Italy
+xml.js:345 The name are:  South Sudan
+xml.js:345 The name are:  Portugal
+xml.js:345 The name are:  Iraq
+xml.js:345 The name are:  Mayotte
+xml.js:345 The name are:  Luxembourg
+xml.js:345 The name are:  Saint Martin
+xml.js:345 The name are:  Albania
+xml.js:345 The name are:  Uganda
+xml.js:345 The name are:  Bhutan
+xml.js:345 The name are:  Wallis and Futuna
+xml.js:345 The name are:  Namibia
+xml.js:345 The name are:  Réunion
+xml.js:345 The name are:  Spain
+xml.js:345 The name are:  Oman
+xml.js:345 The name are:  Bangladesh
+xml.js:345 The name are:  Djibouti
+xml.js:345 The name are:  Taiwan
+xml.js:345 The name are:  Mauritius
+xml.js:345 The name are:  Svalbard and Jan Mayen
+xml.js:345 The name are:  Thailand
+xml.js:345 The name are:  Honduras
+xml.js:345 The name are:  Paraguay
+xml.js:345 The name are:  Liberia
+xml.js:345 The name are:  Slovenia
+xml.js:345 The name are:  Somalia
+xml.js:345 The name are:  Gibraltar
+xml.js:345 The name are:  New Zealand
+xml.js:345 The name are:  British Virgin Islands
+xml.js:345 The name are:  Bahamas
+xml.js:345 The name are:  Malawi
+xml.js:345 The name are:  Saudi Arabia
+xml.js:345 The name are:  Guinea-Bissau
+xml.js:345 The name are:  Ecuador
+xml.js:345 The name are:  Timor-Leste
+xml.js:345 The name are:  Switzerland
+xml.js:345 The name are:  Libya
+xml.js:345 The name are:  Senegal
+xml.js:345 The name are:  Bolivia
+xml.js:345 The name are:  Australia
+xml.js:345 The name are:  Papua New Guinea
+xml.js:345 The name are:  Barbados
+xml.js:345 The name are:  Republic of the Congo
+xml.js:345 The name are:  Kosovo
+xml.js:345 The name are:  French Polynesia
+xml.js:345 The name are:  Lithuania
+xml.js:345 The name are:  Bulgaria
+xml.js:345 The name are:  Sudan
+xml.js:345 The name are:  Saint Barthélemy
+xml.js:345 The name are:  Turkmenistan
+xml.js:345 The name are:  Myanmar
+xml.js:345 The name are:  Brazil
+xml.js:345 The name are:  Colombia
+xml.js:345 The name are:  Heard Island and McDonald Islands
+xml.js:345 The name are:  Iran
+xml.js:345 The name are:  Moldova
+xml.js:345 The name are:  Montserrat
+xml.js:345 The name are:  Denmark
+xml.js:345 The name are:  Macau
+xml.js:345 The name are:  Norway
+xml.js:345 The name are:  Cape Verde
+xml.js:345 The name are:  Japan
+xml.js:345 The name are:  Bahrain
+xml.js:345 The name are:  Cyprus
+xml.js:345 The name are:  Gabon
+xml.js:345 The name are:  Niger
+xml.js:345 The name are:  Cook Islands
+xml.js:345 The name are:  Maldives
+xml.js:345 The name are:  Andorra
+xml.js:345 The name are:  Dominican Republic
+xml.js:345 The name are:  Singapore
+xml.js:345 The name are:  DR Congo
+xml.js:345 The name are:  South Georgia
+xml.js:345 The name are:  Bouvet Island
+xml.js:345 The name are:  El Salvador
+xml.js:345 The name are:  Yemen
+xml.js:345 The name are:  Ukraine
+xml.js:345 The name are:  France
+xml.js:345 The name are:  China
+xml.js:345 The name are:  Peru
+xml.js:345 The name are:  Saint Pierre and Miquelon
+xml.js:345 The name are:  Suriname
+xml.js:345 The name are:  Pitcairn Islands
+xml.js:345 The name are:  Afghanistan
+xml.js:345 The name are:  Hungary
+xml.js:345 The name are:  United Kingdom
+xml.js:345 The name are:  Mauritania
+xml.js:345 The name are:  American Samoa
+xml.js:345 The name are:  Estonia
+xml.js:345 The name are:  Kuwait
+xml.js:345 The name are:  French Southern and Antarctic Lands
+xml.js:345 The name are:  India
+xml.js:345 The name are:  Netherlands
+xml.js:345 The name are:  Jordan
+xml.js:345 The name are:  Caribbean Netherlands
+xml.js:345 The name are:  Cayman Islands
+xml.js:345 The name are:  Malaysia
+xml.js:345 The name are:  Ghana
+xml.js:345 The name are:  Puerto Rico
+xml.js:345 The name are:  Croatia
+xml.js:345 The name are:  Czechia
+xml.js:345 The name are:  Uzbekistan
+xml.js:345 The name are:  Burundi
+xml.js:345 The name are:  British Indian Ocean Territory
+xml.js:345 The name are:  Christmas Island
+xml.js:345 The name are:  Belize
+xml.js:345 The name are:  Kenya
+xml.js:345 The name are:  Antarctica
+xml.js:345 The name are:  Kazakhstan
+xml.js:345 The name are:  Argentina
+xml.js:345 The name are:  Hong Kong
+xml.js:345 The name are:  Micronesia
+xml.js:345 The name are:  Romania
+xml.js:345 The name are:  Kiribati
+xml.js:345 The name are:  Vanuatu
+xml.js:345 The name are:  Angola
+xml.js:345 The name are:  Anguilla
+xml.js:345 The name are:  Poland
+xml.js:345 The name are:  Belgium
+xml.js:345 The name are:  Mozambique
+xml.js:345 The name are:  Bermuda
+xml.js:345 The name are:  Russia
+xml.js:345 The name are:  Greenland
+xml.js:346 The name are:  ['Helsinki']
+xml.js:346 The name are:  ['Guatemala City']
+xml.js:346 The name are:  ['Santiago']
+xml.js:346 The name are:  ['Montevideo']
+xml.js:346 The name are:  ['Bishkek']
+xml.js:346 The name are:  ['Lusaka']
+xml.js:346 The name are:  ['Alofi']
+xml.js:346 The name are:  ['Vienna']
+xml.js:346 The name are:  ['Tbilisi']
+xml.js:346 The name are:  ['Port of Spain']
+xml.js:346 The name are:  ['Seoul']
+xml.js:346 The name are:  ['Washington DC']
+xml.js:346 The name are:  ['Cayenne']
+xml.js:346 The name are:  ['Bamako']
+xml.js:346 The name are:  ['Skopje']
+xml.js:346 The name are:  ['Suva']
+xml.js:346 The name are:  ['Antananarivo']
+xml.js:346 The name are:  ['Roseau']
+xml.js:346 The name are:  ['Yaren']
+xml.js:346 The name are:  ['San José']
+xml.js:346 The name are:  ['Ngerulmud']
+xml.js:346 The name are:  ['Algiers']
+xml.js:346 The name are:  ['Managua']
+xml.js:346 The name are:  ['Harare']
+xml.js:346 The name are:  ['Kigali']
+xml.js:346 The name are:  ['Ankara']
+xml.js:346 The name are:  ['Monaco']
+xml.js:346 The name are:  ['Dushanbe']
+xml.js:346 The name are:  ['West Island']
+xml.js:346 The name are:  ['Kingston']
+xml.js:346 The name are:  ['Riga']
+xml.js:346 The name are:  ['Jamestown']
+xml.js:346 The name are:  ['Oranjestad']
+xml.js:346 The name are:  ['Islamabad']
+xml.js:346 The name are:  ['Minsk']
+xml.js:346 The name are:  ['Honiara']
+xml.js:346 The name are:  ['Mbabane']
+xml.js:346 The name are:  ['Nouméa']
+xml.js:346 The name are:  ['Mexico City']
+xml.js:346 The name are:  ['St. Peter Port']
+xml.js:346 The name are:  ['Vaduz']
+xml.js:346 The name are:  ['Gaborone']
+xml.js:346 The name are:  ['Kingstown']
+xml.js:346 The name are:  ['Mariehamn']
+xml.js:346 The name are:  ['Jerusalem']
+xml.js:346 The name are:  ['Conakry']
+xml.js:346 The name are:  ['Pyongyang']
+xml.js:346 The name are:  ['Manila']
+xml.js:346 The name are:  ['Basse-Terre']
+xml.js:346 The name are:  ['Tunis']
+xml.js:346 The name are:  ['Bangui']
+xml.js:346 The name are:  ['Abuja']
+xml.js:346 The name are:  ['Athens']
+xml.js:346 The name are:  ['Saint Helier']
+xml.js:346 The name are:  ['Ramallah']
+xml.js:346 The name are:  ['Yamoussoukro']
+xml.js:346 The name are:  ['Saipan']
+xml.js:346 The name are:  ['Moroni']
+xml.js:346 The name are:  ['Lomé']
+xml.js:346 The name are:  ['Maseru']
+xml.js:346 The name are:  ['Charlotte Amalie']
+xml.js:346 The name are:  ['Basseterre']
+xml.js:346 The name are:  ['Majuro']
+xml.js:346 The name are:  ['Malabo']
+xml.js:346 The name are:  ['Jakarta']
+xml.js:346 The name are:  ['Ottawa']
+xml.js:346 The name are:  ['Yerevan']
+xml.js:346 The name are:  ['Stanley']
+xml.js:346 The name are:  ['Panama City']
+xml.js:346 The name are:  ['Hagåtña']
+xml.js:346 The name are:  ['Cairo']
+xml.js:346 The name are:  ['Valletta']
+xml.js:346 The name are:  ['Vientiane']
+xml.js:346 The name are:  ['Baku']
+xml.js:346 The name are:  ['Cockburn Town']
+xml.js:346 The name are:  ['Castries']
+xml.js:346 The name are:  ['Phnom Penh']
+xml.js:346 The name are:  ['Fakaofo']
+xml.js:346 The name are:  ['Havana']
+xml.js:346 The name are:  ['São Tomé']
+xml.js:346 The name are:  ["Saint John's"]
+xml.js:346 The name are:  ["St. George's"]
+xml.js:346 The name are:  ['Belgrade']
+xml.js:346 The name are:  ["N'Djamena"]
+xml.js:346 The name are:  ['Hanoi']
+xml.js:346 The name are:  ['Sri Jayawardenepura Kotte']
+xml.js:346 The name are:  ['El Aaiún']
+xml.js:346 The name are:  ['Ouagadougou']
+xml.js:346 The name are:  ['Dublin']
+xml.js:346 The name are:  ['Fort-de-France']
+xml.js:346 The name are:  ['Doha']
+xml.js:346 The name are:  ['Freetown']
+xml.js:346 The name are:  ['Bratislava']
+xml.js:346 The name are:  ['Podgorica']
+xml.js:346 The name are:  ['Reykjavik']
+xml.js:346 The name are:  ['Banjul']
+xml.js:346 The name are:  ['Georgetown']
+xml.js:346 The name are:  ['Rabat']
+xml.js:346 The name are:  ['Philipsburg']
+xml.js:346 The name are:  ['Stockholm']
+xml.js:346 The name are:  ['Funafuti']
+xml.js:346 The name are:  ['Abu Dhabi']
+xml.js:346 The name are:  ['Caracas']
+xml.js:346 The name are:  ['Apia']
+xml.js:346 The name are:  ['Beirut']
+xml.js:346 The name are:  ['Porto-Novo']
+xml.js:346 The name are:  ['Washington, D.C.']
+xml.js:346 The name are:  ["Nuku'alofa"]
+xml.js:346 The name are:  ['Willemstad']
+xml.js:346 The name are:  ['Douglas']
+xml.js:346 The name are:  ['Sarajevo']
+xml.js:346 The name are:  ['Port-au-Prince']
+xml.js:346 The name are:  ['Victoria']
+xml.js:346 The name are:  ['Dodoma']
+xml.js:346 The name are:  ['Tórshavn']
+xml.js:346 The name are:  ['Asmara']
+xml.js:346 The name are:  ['Addis Ababa']
+xml.js:346 The name are:  ['Kingston']
+xml.js:346 The name are:  ['Ulan Bator']
+xml.js:346 The name are:  ['Berlin']
+xml.js:346 The name are:  ['Vatican City']
+xml.js:346 The name are:  ['Yaoundé']
+xml.js:346 The name are:  ['Kathmandu']
+xml.js:346 The name are:  (3) ['Pretoria', 'Bloemfontein', 'Cape Town']
+xml.js:346 The name are:  ['Damascus']
+xml.js:346 The name are:  ['City of San Marino']
+xml.js:346 The name are:  ['Bandar Seri Begawan']
+xml.js:346 The name are:  ['Rome']
+xml.js:346 The name are:  ['Juba']
+xml.js:346 The name are:  ['Lisbon']
+xml.js:346 The name are:  ['Baghdad']
+xml.js:346 The name are:  ['Mamoudzou']
+xml.js:346 The name are:  ['Luxembourg']
+xml.js:346 The name are:  ['Marigot']
+xml.js:346 The name are:  ['Tirana']
+xml.js:346 The name are:  ['Kampala']
+xml.js:346 The name are:  ['Thimphu']
+xml.js:346 The name are:  ['Mata-Utu']
+xml.js:346 The name are:  ['Windhoek']
+xml.js:346 The name are:  ['Saint-Denis']
+xml.js:346 The name are:  ['Madrid']
+xml.js:346 The name are:  ['Muscat']
+xml.js:346 The name are:  ['Dhaka']
+xml.js:346 The name are:  ['Djibouti']
+xml.js:346 The name are:  ['Taipei']
+xml.js:346 The name are:  ['Port Louis']
+xml.js:346 The name are:  ['Longyearbyen']
+xml.js:346 The name are:  ['Bangkok']
+xml.js:346 The name are:  ['Tegucigalpa']
+xml.js:346 The name are:  ['Asunción']
+xml.js:346 The name are:  ['Monrovia']
+xml.js:346 The name are:  ['Ljubljana']
+xml.js:346 The name are:  ['Mogadishu']
+xml.js:346 The name are:  ['Gibraltar']
+xml.js:346 The name are:  ['Wellington']
+xml.js:346 The name are:  ['Road Town']
+xml.js:346 The name are:  ['Nassau']
+xml.js:346 The name are:  ['Lilongwe']
+xml.js:346 The name are:  ['Riyadh']
+xml.js:346 The name are:  ['Bissau']
+xml.js:346 The name are:  ['Quito']
+xml.js:346 The name are:  ['Dili']
+xml.js:346 The name are:  ['Bern']
+xml.js:346 The name are:  ['Tripoli']
+xml.js:346 The name are:  ['Dakar']
+xml.js:346 The name are:  ['Sucre']
+xml.js:346 The name are:  ['Canberra']
+xml.js:346 The name are:  ['Port Moresby']
+xml.js:346 The name are:  ['Bridgetown']
+xml.js:346 The name are:  ['Brazzaville']
+xml.js:346 The name are:  ['Pristina']
+xml.js:346 The name are:  ['Papeetē']
+xml.js:346 The name are:  ['Vilnius']
+xml.js:346 The name are:  ['Sofia']
+xml.js:346 The name are:  ['Khartoum']
+xml.js:346 The name are:  ['Gustavia']
+xml.js:346 The name are:  ['Ashgabat']
+xml.js:346 The name are:  ['Naypyidaw']
+xml.js:346 The name are:  ['Brasília']
+xml.js:346 The name are:  ['Bogotá']
+xml.js:346 The name are:  undefined
+xml.js:346 The name are:  ['Tehran']
+xml.js:346 The name are:  ['Chișinău']
+xml.js:346 The name are:  ['Plymouth']
+xml.js:346 The name are:  ['Copenhagen']
+xml.js:346 The name are:  undefined
+xml.js:346 The name are:  ['Oslo']
+xml.js:346 The name are:  ['Praia']
+xml.js:346 The name are:  ['Tokyo']
+xml.js:346 The name are:  ['Manama']
+xml.js:346 The name are:  ['Nicosia']
+xml.js:346 The name are:  ['Libreville']
+xml.js:346 The name are:  ['Niamey']
+xml.js:346 The name are:  ['Avarua']
+xml.js:346 The name are:  ['Malé']
+xml.js:346 The name are:  ['Andorra la Vella']
+xml.js:346 The name are:  ['Santo Domingo']
+xml.js:346 The name are:  ['Singapore']
+xml.js:346 The name are:  ['Kinshasa']
+xml.js:346 The name are:  ['King Edward Point']
+xml.js:346 The name are:  undefined
+xml.js:346 The name are:  ['San Salvador']
+xml.js:346 The name are:  ["Sana'a"]
+xml.js:346 The name are:  ['Kyiv']
+xml.js:346 The name are:  ['Paris']
+xml.js:346 The name are:  ['Beijing']
+xml.js:346 The name are:  ['Lima']
+xml.js:346 The name are:  ['Saint-Pierre']
+xml.js:346 The name are:  ['Paramaribo']
+xml.js:346 The name are:  ['Adamstown']
+xml.js:346 The name are:  ['Kabul']
+xml.js:346 The name are:  ['Budapest']
+xml.js:346 The name are:  ['London']
+xml.js:346 The name are:  ['Nouakchott']
+xml.js:346 The name are:  ['Pago Pago']
+xml.js:346 The name are:  ['Tallinn']
+xml.js:346 The name are:  ['Kuwait City']
+xml.js:346 The name are:  ['Port-aux-Français']
+xml.js:346 The name are:  ['New Delhi']
+xml.js:346 The name are:  ['Amsterdam']
+xml.js:346 The name are:  ['Amman']
+xml.js:346 The name are:  ['Kralendijk']
+xml.js:346 The name are:  ['George Town']
+xml.js:346 The name are:  ['Kuala Lumpur']
+xml.js:346 The name are:  ['Accra']
+xml.js:346 The name are:  ['San Juan']
+xml.js:346 The name are:  ['Zagreb']
+xml.js:346 The name are:  ['Prague']
+xml.js:346 The name are:  ['Tashkent']
+xml.js:346 The name are:  ['Gitega']
+xml.js:346 The name are:  ['Diego Garcia']
+xml.js:346 The name are:  ['Flying Fish Cove']
+xml.js:346 The name are:  ['Belmopan']
+xml.js:346 The name are:  ['Nairobi']
+xml.js:346 The name are:  undefined
+xml.js:346 The name are:  ['Nur-Sultan']
+xml.js:346 The name are:  ['Buenos Aires']
+xml.js:346 The name are:  ['City of Victoria']
+xml.js:346 The name are:  ['Palikir']
+xml.js:346 The name are:  ['Bucharest']
+xml.js:346 The name are:  ['South Tarawa']
+xml.js:346 The name are:  ['Port Vila']
+xml.js:346 The name are:  ['Luanda']
+xml.js:346 The name are:  ['The Valley']
+xml.js:346 The name are:  ['Warsaw']
+xml.js:346 The name are:  ['Brussels']
+xml.js:346 The name are:  ['Maputo']
+xml.js:346 The name are:  ['Hamilton']
+xml.js:346 The name are:  ['Moscow']
+xml.js:346 The name are:  ['Nuuk']
+xml.js:347 The name are:  🇫🇮
+xml.js:347 The name are:  🇬🇹
+xml.js:347 The name are:  🇨🇱
+xml.js:347 The name are:  🇺🇾
+xml.js:347 The name are:  🇰🇬
+xml.js:347 The name are:  🇿🇲
+xml.js:347 The name are:  🇳🇺
+xml.js:347 The name are:  🇦🇹
+xml.js:347 The name are:  🇬🇪
+xml.js:347 The name are:  🇹🇹
+xml.js:347 The name are:  🇰🇷
+xml.js:347 The name are:  🇺🇲
+xml.js:347 The name are:  🇬🇫
+xml.js:347 The name are:  🇲🇱
+xml.js:347 The name are:  🇲🇰
+xml.js:347 The name are:  🇫🇯
+xml.js:347 The name are:  🇲🇬
+xml.js:347 The name are:  🇩🇲
+xml.js:347 The name are:  🇳🇷
+xml.js:347 The name are:  🇨🇷
+xml.js:347 The name are:  🇵🇼
+xml.js:347 The name are:  🇩🇿
+xml.js:347 The name are:  🇳🇮
+xml.js:347 The name are:  🇿🇼
+xml.js:347 The name are:  🇷🇼
+xml.js:347 The name are:  🇹🇷
+xml.js:347 The name are:  🇲🇨
+xml.js:347 The name are:  🇹🇯
+xml.js:347 The name are:  🇨🇨
+xml.js:347 The name are:  🇯🇲
+xml.js:347 The name are:  🇱🇻
+xml.js:347 The name are:  🇸🇭
+xml.js:347 The name are:  🇦🇼
+xml.js:347 The name are:  🇵🇰
+xml.js:347 The name are:  🇧🇾
+xml.js:347 The name are:  🇸🇧
+xml.js:347 The name are:  🇸🇿
+xml.js:347 The name are:  🇳🇨
+xml.js:347 The name are:  🇲🇽
+xml.js:347 The name are:  🇬🇬
+xml.js:347 The name are:  🇱🇮
+xml.js:347 The name are:  🇧🇼
+xml.js:347 The name are:  🇻🇨
+xml.js:347 The name are:  🇦🇽
+xml.js:347 The name are:  🇮🇱
+xml.js:347 The name are:  🇬🇳
+xml.js:347 The name are:  🇰🇵
+xml.js:347 The name are:  🇵🇭
+xml.js:347 The name are:  🇬🇵
+xml.js:347 The name are:  🇹🇳
+xml.js:347 The name are:  🇨🇫
+xml.js:347 The name are:  🇳🇬
+xml.js:347 The name are:  🇬🇷
+xml.js:347 The name are:  🇯🇪
+xml.js:347 The name are:  🇵🇸
+xml.js:347 The name are:  🇨🇮
+xml.js:347 The name are:  🇲🇵
+xml.js:347 The name are:  🇰🇲
+xml.js:347 The name are:  🇹🇬
+xml.js:347 The name are:  🇱🇸
+xml.js:347 The name are:  🇻🇮
+xml.js:347 The name are:  🇰🇳
+xml.js:347 The name are:  🇲🇭
+xml.js:347 The name are:  🇬🇶
+xml.js:347 The name are:  🇮🇩
+xml.js:347 The name are:  🇨🇦
+xml.js:347 The name are:  🇦🇲
+xml.js:347 The name are:  🇫🇰
+xml.js:347 The name are:  🇵🇦
+xml.js:347 The name are:  🇬🇺
+xml.js:347 The name are:  🇪🇬
+xml.js:347 The name are:  🇲🇹
+xml.js:347 The name are:  🇱🇦
+xml.js:347 The name are:  🇦🇿
+xml.js:347 The name are:  🇹🇨
+xml.js:347 The name are:  🇱🇨
+xml.js:347 The name are:  🇰🇭
+xml.js:347 The name are:  🇹🇰
+xml.js:347 The name are:  🇨🇺
+xml.js:347 The name are:  🇸🇹
+xml.js:347 The name are:  🇦🇬
+xml.js:347 The name are:  🇬🇩
+xml.js:347 The name are:  🇷🇸
+xml.js:347 The name are:  🇹🇩
+xml.js:347 The name are:  🇻🇳
+xml.js:347 The name are:  🇱🇰
+xml.js:347 The name are:  🇪🇭
+xml.js:347 The name are:  🇧🇫
+xml.js:347 The name are:  🇮🇪
+xml.js:347 The name are:  🇲🇶
+xml.js:347 The name are:  🇶🇦
+xml.js:347 The name are:  🇸🇱
+xml.js:347 The name are:  🇸🇰
+xml.js:347 The name are:  🇲🇪
+xml.js:347 The name are:  🇮🇸
+xml.js:347 The name are:  🇬🇲
+xml.js:347 The name are:  🇬🇾
+xml.js:347 The name are:  🇲🇦
+xml.js:347 The name are:  🇸🇽
+xml.js:347 The name are:  🇸🇪
+xml.js:347 The name are:  🇹🇻
+xml.js:347 The name are:  🇦🇪
+xml.js:347 The name are:  🇻🇪
+xml.js:347 The name are:  🇼🇸
+xml.js:347 The name are:  🇱🇧
+xml.js:347 The name are:  🇧🇯
+xml.js:347 The name are:  🇺🇸
+xml.js:347 The name are:  🇹🇴
+xml.js:347 The name are:  🇨🇼
+xml.js:347 The name are:  🇮🇲
+xml.js:347 The name are:  🇧🇦
+xml.js:347 The name are:  🇭🇹
+xml.js:347 The name are:  🇸🇨
+xml.js:347 The name are:  🇹🇿
+xml.js:347 The name are:  🇫🇴
+xml.js:347 The name are:  🇪🇷
+xml.js:347 The name are:  🇪🇹
+xml.js:347 The name are:  🇳🇫
+xml.js:347 The name are:  🇲🇳
+xml.js:347 The name are:  🇩🇪
+xml.js:347 The name are:  🇻🇦
+xml.js:347 The name are:  🇨🇲
+xml.js:347 The name are:  🇳🇵
+xml.js:347 The name are:  🇿🇦
+xml.js:347 The name are:  🇸🇾
+xml.js:347 The name are:  🇸🇲
+xml.js:347 The name are:  🇧🇳
+xml.js:347 The name are:  🇮🇹
+xml.js:347 The name are:  🇸🇸
+xml.js:347 The name are:  🇵🇹
+xml.js:347 The name are:  🇮🇶
+xml.js:347 The name are:  🇾🇹
+xml.js:347 The name are:  🇱🇺
+xml.js:347 The name are:  🇲🇫
+xml.js:347 The name are:  🇦🇱
+xml.js:347 The name are:  🇺🇬
+xml.js:347 The name are:  🇧🇹
+xml.js:347 The name are:  🇼🇫
+xml.js:347 The name are:  🇳🇦
+xml.js:347 The name are:  🇷🇪
+xml.js:347 The name are:  🇪🇸
+xml.js:347 The name are:  🇴🇲
+xml.js:347 The name are:  🇧🇩
+xml.js:347 The name are:  🇩🇯
+xml.js:347 The name are:  🇹🇼
+xml.js:347 The name are:  🇲🇺
+xml.js:347 The name are:  🇸🇯
+xml.js:347 The name are:  🇹🇭
+xml.js:347 The name are:  🇭🇳
+xml.js:347 The name are:  🇵🇾
+xml.js:347 The name are:  🇱🇷
+xml.js:347 The name are:  🇸🇮
+xml.js:347 The name are:  🇸🇴
+xml.js:347 The name are:  🇬🇮
+xml.js:347 The name are:  🇳🇿
+xml.js:347 The name are:  🇻🇬
+xml.js:347 The name are:  🇧🇸
+xml.js:347 The name are:  🇲🇼
+xml.js:347 The name are:  🇸🇦
+xml.js:347 The name are:  🇬🇼
+xml.js:347 The name are:  🇪🇨
+xml.js:347 The name are:  🇹🇱
+xml.js:347 The name are:  🇨🇭
+xml.js:347 The name are:  🇱🇾
+xml.js:347 The name are:  🇸🇳
+xml.js:347 The name are:  🇧🇴
+xml.js:347 The name are:  🇦🇺
+xml.js:347 The name are:  🇵🇬
+xml.js:347 The name are:  🇧🇧
+xml.js:347 The name are:  🇨🇬
+xml.js:347 The name are:  🇽🇰
+xml.js:347 The name are:  🇵🇫
+xml.js:347 The name are:  🇱🇹
+xml.js:347 The name are:  🇧🇬
+xml.js:347 The name are:  🇸🇩
+xml.js:347 The name are:  🇧🇱
+xml.js:347 The name are:  🇹🇲
+xml.js:347 The name are:  🇲🇲
+xml.js:347 The name are:  🇧🇷
+xml.js:347 The name are:  🇨🇴
+xml.js:347 The name are:  🇭🇲
+xml.js:347 The name are:  🇮🇷
+xml.js:347 The name are:  🇲🇩
+xml.js:347 The name are:  🇲🇸
+xml.js:347 The name are:  🇩🇰
+xml.js:347 The name are:  🇲🇴
+xml.js:347 The name are:  🇳🇴
+xml.js:347 The name are:  🇨🇻
+xml.js:347 The name are:  🇯🇵
+xml.js:347 The name are:  🇧🇭
+xml.js:347 The name are:  🇨🇾
+xml.js:347 The name are:  🇬🇦
+xml.js:347 The name are:  🇳🇪
+xml.js:347 The name are:  🇨🇰
+xml.js:347 The name are:  🇲🇻
+xml.js:347 The name are:  🇦🇩
+xml.js:347 The name are:  🇩🇴
+xml.js:347 The name are:  🇸🇬
+xml.js:347 The name are:  🇨🇩
+xml.js:347 The name are:  🇬🇸
+xml.js:347 The name are:  🇧🇻
+xml.js:347 The name are:  🇸🇻
+xml.js:347 The name are:  🇾🇪
+xml.js:347 The name are:  🇺🇦
+xml.js:347 The name are:  🇫🇷
+xml.js:347 The name are:  🇨🇳
+xml.js:347 The name are:  🇵🇪
+xml.js:347 The name are:  🇵🇲
+xml.js:347 The name are:  🇸🇷
+xml.js:347 The name are:  🇵🇳
+xml.js:347 The name are:  🇦🇫
+xml.js:347 The name are:  🇭🇺
+xml.js:347 The name are:  🇬🇧
+xml.js:347 The name are:  🇲🇷
+xml.js:347 The name are:  🇦🇸
+xml.js:347 The name are:  🇪🇪
+xml.js:347 The name are:  🇰🇼
+xml.js:347 The name are:  🇹🇫
+xml.js:347 The name are:  🇮🇳
+xml.js:347 The name are:  🇳🇱
+xml.js:347 The name are:  🇯🇴
+xml.js:347 The name are:  🇧🇶
+xml.js:347 The name are:  🇰🇾
+xml.js:347 The name are:  🇲🇾
+xml.js:347 The name are:  🇬🇭
+xml.js:347 The name are:  🇵🇷
+xml.js:347 The name are:  🇭🇷
+xml.js:347 The name are:  🇨🇿
+xml.js:347 The name are:  🇺🇿
+xml.js:347 The name are:  🇧🇮
+xml.js:347 The name are:  🇮🇴
+xml.js:347 The name are:  🇨🇽
+xml.js:347 The name are:  🇧🇿
+xml.js:347 The name are:  🇰🇪
+xml.js:347 The name are:  🇦🇶
+xml.js:347 The name are:  🇰🇿
+xml.js:347 The name are:  🇦🇷
+xml.js:347 The name are:  🇭🇰
+xml.js:347 The name are:  🇫🇲
+xml.js:347 The name are:  🇷🇴
+xml.js:347 The name are:  🇰🇮
+xml.js:347 The name are:  🇻🇺
+xml.js:347 The name are:  🇦🇴
+xml.js:347 The name are:  🇦🇮
+xml.js:347 The name are:  🇵🇱
+xml.js:347 The name are:  🇧🇪
+xml.js:347 The name are:  🇲🇿
+xml.js:347 The name are:  🇧🇲
+xml.js:347 The name are:  🇷🇺
+xml.js:347 The name are:  🇬🇱
+
+// 4.Print the total population of countries using reduce function
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3.1/all") /* opening data that we need from server */
+xhr.send(); /* Sending to browser That data */
+
+xhr.responseType = "json" /* Data type */
+
+xhr.onload = function displayResult() {
+    var countries = xhr.response
+    var result = [];
+    countries.map(function(n) {
+        var country = n.population
+        result.push(country)
+        var result1 = result.reduce(function(acc, curr) {
+            return acc + curr
+        })
+        console.log(result1)
+
+    })
+
+}
+
+//output
+7777721563--
